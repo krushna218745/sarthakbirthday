@@ -1,221 +1,292 @@
-.award-section {
+/* WhatsApp Group Chat Section */
+.whatsapp-section {
     min-height: 100vh;
-    padding: 80px 20px;
-    background: linear-gradient(180deg, #0a0a0a 0%, #1a1000 50%, #0a0a0a 100%);
-}
-
-.award-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.award-main-title {
-    font-family: 'Bungee Shade', cursive;
-    font-size: clamp(1.5rem, 5vw, 3.5rem);
-    background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: goldShimmer 3s ease infinite;
-    margin-bottom: 10px;
-}
-
-@keyframes goldShimmer {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-.award-subtitle {
-    font-family: 'Permanent Marker', cursive;
-    font-size: clamp(0.9rem, 2vw, 1.3rem);
-    color: #b0b0b0;
-}
-
-.award-year {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.6rem;
-    color: #FFD700;
-    margin-top: 8px;
-    letter-spacing: 3px;
-}
-
-/* Marquee */
-.marquee-container {
-    overflow: hidden;
-    background: linear-gradient(90deg, #8B0000, #CC0000, #8B0000);
-    padding: 12px 0;
-    margin-bottom: 50px;
-    border-top: 2px solid #FFD700;
-    border-bottom: 2px solid #FFD700;
-}
-
-.marquee {
+    padding: 60px 20px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #0d1418 50%, #0a0a0a 100%);
     display: flex;
-    animation: marqueeScroll 20s linear infinite;
-    white-space: nowrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.marquee-text {
-    font-family: 'Bangers', cursive;
-    font-size: clamp(1rem, 2vw, 1.4rem);
-    color: #FFD700;
-    letter-spacing: 2px;
-    padding-right: 50px;
-    flex-shrink: 0;
-}
-
-@keyframes marqueeScroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
-/* Awards Grid */
-.awards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: 0 auto 50px;
-}
-
-.award-card {
-    background: linear-gradient(135deg, #1a1a2e, #2a2a10);
-    border: 2px solid #FFD700;
+.whatsapp-container {
+    width: 100%;
+    max-width: 450px;
+    background: #0b141a;
     border-radius: 20px;
-    padding: 30px;
-    text-align: center;
-    cursor: pointer;
-    position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 50px rgba(37, 211, 102, 0.2);
+    border: 2px solid #25D366;
 }
 
-.award-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at 50% 0%, rgba(255, 215, 0, 0.1), transparent 70%);
-    pointer-events: none;
+/* WhatsApp Header */
+.whatsapp-header {
+    background: #1f2c34;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.award-trophy {
-    font-size: 55px;
-    display: inline-block;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.5));
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.award-category {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
-    color: #FFD700;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
-    text-transform: uppercase;
+.back-arrow {
+    color: #00a884;
+    font-size: 1.2rem;
 }
 
-.award-name {
+.group-avatar {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.group-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.group-name {
     font-family: 'Bangers', cursive;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: #ffffff;
-    letter-spacing: 1px;
-    margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 
-.award-presenter {
+.group-members {
+    font-size: 0.7rem;
+    color: #8696a0;
+}
+
+.header-icons {
+    display: flex;
+    gap: 18px;
+    font-size: 1.1rem;
+}
+
+/* Chat Container */
+.chat-container {
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23061118" width="100" height="100"/><circle fill="%230d1d26" cx="20" cy="20" r="3"/><circle fill="%230d1d26" cx="80" cy="40" r="2"/><circle fill="%230d1d26" cx="50" cy="70" r="4"/></svg>');
+    background-size: 100px;
+    padding: 15px;
+    min-height: 500px;
+    max-height: 60vh;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 4px;
+}
+
+.date-bubble {
+    align-self: center;
+    background: #182229;
+    padding: 5px 12px;
+    border-radius: 8px;
     margin-bottom: 15px;
 }
 
-.presented-by {
-    font-size: 0.7rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.presenter-name {
+.date-bubble span {
     font-family: 'Permanent Marker', cursive;
-    font-size: 0.9rem;
-    color: #b0b0b0;
+    font-size: 0.75rem;
+    color: #8696a0;
 }
 
-.award-winner {
-    background: linear-gradient(135deg, #FFD700, #FFA500);
-    border-radius: 12px;
-    padding: 10px 16px;
+/* Message Styles */
+.message-wrapper {
+    display: flex;
+    margin-bottom: 2px;
+}
+
+.message-wrapper.sent {
+    justify-content: flex-end;
+}
+
+.message-wrapper.received {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    max-width: 80%;
+    padding: 6px 10px;
+    border-radius: 8px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 2px;
 }
 
-.winner-label {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.5rem;
-    color: #1a1a2e;
+.sent-bubble {
+    background: #005c4b;
+    border-top-right-radius: 0;
 }
 
-.winner-name {
+.received-bubble {
+    background: #1f2c34;
+    border-top-left-radius: 0;
+}
+
+.sender-name {
     font-family: 'Bangers', cursive;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.message-text {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    color: #e9edef;
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+
+.message-time {
+    font-size: 0.65rem;
+    color: #8696a0;
+    text-align: right;
+    margin-top: 2px;
+    align-self: flex-end;
+}
+
+/* WhatsApp Input Bar */
+.whatsapp-input-bar {
+    background: #1f2c34;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.emoji-btn, .attach-btn, .camera-btn {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.input-field {
+    flex: 1;
+    background: #2a3942;
+    padding: 10px 15px;
+    border-radius: 25px;
+    color: #8696a0;
+    font-size: 0.9rem;
+}
+
+.mic-btn {
+    width: 40px;
+    height: 40px;
+    background: #00a884;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.1rem;
-    color: #1a1a2e;
-    letter-spacing: 2px;
 }
 
-/* Speech Bubble */
-.speech-bubble {
-    max-width: 700px;
-    margin: 0 auto;
-    background: rgba(26, 26, 46, 0.8);
-    border: 2px solid #FFD700;
-    border-radius: 20px;
-    padding: 30px;
-    position: relative;
-    text-align: center;
-}
-
-.speech-bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid #FFD700;
-}
-
-.speech-text {
+/* Caption */
+.chat-caption {
+    margin-top: 30px;
     font-family: 'Permanent Marker', cursive;
     font-size: clamp(0.9rem, 2vw, 1.2rem);
-    color: #ffffff;
-    line-height: 1.8;
-    font-style: italic;
+    color: #25D366;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
-.speech-author {
-    display: block;
-    margin-top: 15px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 0.6rem;
-    color: #FFD700;
+.chat-caption.caption-visible {
+    opacity: 1;
+}
+
+/* Message fade in animation */
+.message-fade-in {
+    animation: messageFadeIn 0.2s ease-out forwards;
+}
+
+@keyframes messageFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Typing Indicator */
+.typing-bubble {
+    padding: 10px 14px;
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 4px 0;
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background: #8696a0;
+    border-radius: 50%;
+    animation: typingBounce 1.4s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typingBounce {
+    0%, 60%, 100% {
+        transform: translateY(0);
+        opacity: 0.4;
+    }
+    30% {
+        transform: translateY(-4px);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar Styling */
+.chat-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-container::-webkit-scrollbar-track {
+    background: #0b141a;
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+    background: #374248;
+    border-radius: 3px;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .whatsapp-container {
+        max-width: 100%;
+        border-radius: 0;
+    }
+    
+    .chat-container {
+        min-height: 400px;
+    }
 }

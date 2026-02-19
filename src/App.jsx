@@ -1,11 +1,9 @@
 import { useState, useCallback } from 'react';
-import { AnimatePresence } from 'framer-motion';
-import LoadingScreen from './components/LoadingScreen';
+import WhatsAppIntro from './components/WhatsAppIntro';
 import HeroSection from './components/HeroSection';
 import TickerBanner from './components/TickerBanner';
 import AchievementSection from './components/AchievementSection';
 import RoastSection from './components/RoastSection';
-import AwardCeremony from './components/AwardCeremony';
 import MemeWall from './components/MemeWall';
 import EvolutionTimeline from './components/EvolutionTimeline';
 import FinalSection from './components/FinalSection';
@@ -14,19 +12,24 @@ import CursorEffects from './components/CursorEffects';
 import SarthakCharacter from './components/characters/SarthakCharacter';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [showIntro, setShowIntro] = useState(true);
 
-  const handleLoadingComplete = useCallback(() => {
-    setIsLoading(false);
+  const handleIntroComplete = useCallback(() => {
+    console.log('handleIntroComplete called! Setting showIntro to false');
+    setShowIntro(false);
   }, []);
 
   return (
     <>
-      <AnimatePresence>
-        {isLoading && <LoadingScreen onComplete={handleLoadingComplete} />}
-      </AnimatePresence>
+      {/* WhatsApp Intro Overlay */}
+      {showIntro && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 9999, background: '#000' }}>
+          <WhatsAppIntro onComplete={handleIntroComplete} />
+        </div>
+      )}
 
-      {!isLoading && (
+      {/* Main Content - shown after intro */}
+      {!showIntro && (
         <>
           <CursorEffects />
           <RandomPopups />
@@ -34,7 +37,6 @@ function App() {
           <HeroSection />
           <TickerBanner />
           <AchievementSection />
-          <AwardCeremony />
           <RoastSection />
           <EvolutionTimeline />
           <MemeWall />
